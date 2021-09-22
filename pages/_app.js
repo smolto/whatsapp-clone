@@ -7,14 +7,11 @@ import {
   ApolloProvider,
   split
 } from '@apollo/client'
-
 import { getMainDefinition } from '@apollo/client/utilities'
-
 import { WebSocketLink } from '@apollo/link-ws'
+import { UserProvider } from '@auth0/nextjs-auth0'
 
 import { DGRAPH_URL } from '../shared/environment/constants'
-
-console.log(DGRAPH_URL)
 
 const httpLink = new HttpLink({
   uri: `https://${DGRAPH_URL}`
@@ -35,7 +32,7 @@ const splitLink = process.browser
       const definition = getMainDefinition(query)
       return (
         definition.kind === 'OperationDefinition' &&
-          definition.operation === 'subscription'
+        definition.operation === 'subscription'
       )
     },
     wsLink,
@@ -50,9 +47,11 @@ const client = new ApolloClient({
 
 function MyApp ({ Component, pageProps }) {
   return (
-    <ApolloProvider client={client}>
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <UserProvider>
+      <ApolloProvider client={client}>
+        <Component {...pageProps} />
+      </ApolloProvider>
+    </UserProvider>
   )
 }
 
