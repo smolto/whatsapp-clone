@@ -1,4 +1,6 @@
 import '../styles/globals.css'
+import '../styles/essential/button.css'
+import '../styles/essential/input.css'
 
 import {
   ApolloClient,
