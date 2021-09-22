@@ -1,4 +1,4 @@
-import { useSubscription, gql } from "@apollo/client";
+import { useSubscription, gql } from '@apollo/client'
 
 const GET_TODOS = gql`
   subscription {
@@ -13,15 +13,13 @@ const GET_TODOS = gql`
       }
     }
   }
-`;
+`
 
 const TodoList = () => {
-  const { loading, error, data } = useSubscription(GET_TODOS);
+  const { loading, error, data } = useSubscription(GET_TODOS)
 
-  console.log(data)
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error :(</p>
   return (
     <>
       {data.getChat.messages.map(({ date, message, user }, index) => (
@@ -34,7 +32,7 @@ const TodoList = () => {
         </div>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default TodoList;
+export default TodoList
