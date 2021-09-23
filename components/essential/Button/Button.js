@@ -1,5 +1,5 @@
-export const Button = ({ text, buttonCSS }) => {
+export const Button = ({ text, buttonCSS, action }) => {
   return (
-    <button className={buttonCSS}>{text}</button>
+    <button className={buttonCSS} onClick={action}>{text}</button>
   )
 }

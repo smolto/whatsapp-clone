@@ -18,4 +18,6 @@ a {
 :root {
   --primary-color: #075E54;
   --secondary-color: #FFF;
+  --black-color: #000;
+  --white-color: #FFF;
 }

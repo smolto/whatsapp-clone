@@ -1,5 +1,8 @@
-export const InputText = ({ text, inputTextCSS }) => {
+export const InputText = ({ text, inputTextCSS, action, type, label, placeholder }) => {
   return (
-    <input type="text" className={inputTextCSS} value={text}/>
+    <>
+      <span>{label}</span>
+      <input type={type} className={inputTextCSS} value={text} onChange={action} placeholder={placeholder} />
+    </>
   )
 }
