@@ -43,6 +43,12 @@
   max-width: 10rem;
 }
 
+.form-alert {
+  width: 100%;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
 
 @media (min-width: 600px) {
   .form-container input {

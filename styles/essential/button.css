@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 
-.btn-primary {
+.btn_primary {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border: 1px solid var(--primary-color);
@@ -20,12 +20,12 @@
   -webkit-transition: opacity 0.3s;
 }
 
-.btn-primary:hover {
+.btn_primary:hover {
   opacity: 0.8;
   color: var(--secondary-color);
 }
 
-.btn-primary:focus {
+.btn_primary:focus {
   opacity: 0.8;
   box-shadow: none;
 }
