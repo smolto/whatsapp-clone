@@ -23,14 +23,15 @@ export default async (req, res) => {
       `
     })
 
-    if (data.queryUser.length <= 0) {
+    if (data.getUser === null) {
       res.status(400).send({
-        data: { queryUser: [] }
+        data: { getUser: null }
       })
     } else {
       res.status(200).send({ data })
     }
   } catch (error) {
+    console.log(error)
     res.status(500).send(error)
   }
 }
